@@ -3,6 +3,7 @@ import React from 'react';
 const Bar = ({ value, width, color, longer }) => {
     let heightMultiplier = 8;
     if (longer) {
+        value = value / 100;
         heightMultiplier = 100;
     }
   return (
