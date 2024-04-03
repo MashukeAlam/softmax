@@ -12,7 +12,7 @@ function BarGraph({ data, onInputChange, onAddInputField, showAddNumberField, co
           <input
           style={{width: `${width}px`}}
             type={longer ? "text" :"number"}
-            value={longer ? `${value * 100}%` : value}
+            value={longer ? `${value}%` : value}
             onChange={(e) => onInputChange(index, e.target.value)}
             className="form-control p-1"
             readOnly={longer}

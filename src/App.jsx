@@ -24,7 +24,7 @@ function App() {
   function calculateSoftmax(arr) {
     const expArray = arr.map(value => Math.exp(value));
     const sumExp = expArray.reduce((acc, curr) => acc + curr, 0);
-    return expArray.map(value => (value / sumExp).toFixed(2));
+    return expArray.map(value => ((value / sumExp) * 100).toFixed(2));
   }
 
   return (
