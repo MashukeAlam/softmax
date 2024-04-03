@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Bar = ({ value, width }) => {
+const Bar = ({ value, width, color }) => {
   return (
-    <div style={{ width: `${width}px`, height: `${value * 10}px`, backgroundColor: 'blue', margin: '5px' }}>
-      {value}
+    <div style={{ width: `${width}px`, height: `${value * 5}px`, backgroundColor: `${color}`, margin: '5px' }}>
+      
     </div>
   );
 };

@@ -1,13 +1,14 @@
 import React from 'react';
 import Bar from './Bar';
 
-function BarGraph({ data, onInputChange, onAddInputField }) {
-    const width=50;
+function BarGraph({ data, onInputChange, onAddInputField, showAddNumberField, color }) {
+    const width=60;
   return (
     <div style={{display: 'flex', alignItems: 'flex-end'}}>
       {data.map((value, index) => (
           <div key={index}>
-        <Bar value={value} width={width} />
+        <Bar value={value} width={width} color={color} />
+        <br></br>
           <input
           style={{width: `${width}px`}}
             type="number"
@@ -16,7 +17,7 @@ function BarGraph({ data, onInputChange, onAddInputField }) {
           />
         </div>
       ))}
-      <button onClick={onAddInputField}>Add Input Field</button>
+      {showAddNumberField && <button onClick={onAddInputField}>Add Input Field</button>}
     </div>
   );
 }
