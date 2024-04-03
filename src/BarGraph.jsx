@@ -5,9 +5,9 @@ function BarGraph({ data, onInputChange, onAddInputField, showAddNumberField, co
     const width=60;
     
   return (
-    <div style={{display: 'flex', alignItems: 'flex-end'}}>
+    <div style={{display: 'flex', alignItems: longer ? 'flex-start'  : "flex-end" }}>
       {data.map((value, index) => (
-          <div key={index} className="mb-3 mt-3">
+          <div key={index} className="mb-3 mt-3" style={{display: 'flex', flexDirection: longer ? 'column-reverse' : 'column'}}>
         <Bar value={value} width={width} color={color} longer={longer} />
           <input
           style={{width: `${width}px`}}
