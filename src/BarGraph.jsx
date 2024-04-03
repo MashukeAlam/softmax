@@ -3,6 +3,7 @@ import Bar from './Bar';
 
 function BarGraph({ data, onInputChange, onAddInputField, showAddNumberField, color, longer }) {
     const width=60;
+    
   return (
     <div style={{display: 'flex', alignItems: 'flex-end'}}>
       {data.map((value, index) => (
@@ -10,10 +11,11 @@ function BarGraph({ data, onInputChange, onAddInputField, showAddNumberField, co
         <Bar value={value} width={width} color={color} longer={longer} />
           <input
           style={{width: `${width}px`}}
-            type="number"
-            value={value}
+            type={longer ? "text" :"number"}
+            value={longer ? `${value * 100}%` : value}
             onChange={(e) => onInputChange(index, e.target.value)}
             className="form-control p-1"
+            readOnly={longer}
           />
         </div>
       ))}
