@@ -16,8 +16,9 @@ function App() {
   };
 
   // Function to add a new input field
-  const handleAddInputField = () => {
+  const handleAddInputField = async () => {
     setData([...data, 0]);
+    setSoftmaxArray(calculateSoftmax([...data, 0]));
   };
 
   function calculateSoftmax(arr) {
@@ -28,7 +29,8 @@ function App() {
 
   return (
     <div style={{display: 'flex', flexDirection: 'column', width: '100%', alignItems: 'center'}}>
-      <button onClick={handleAddInputField}>+ Add</button>
+      <h4>Softmax Visualization</h4>
+      <button onClick={handleAddInputField} className="btn btn-warning">+ Add</button>
       <BarGraph data={data}  onInputChange={handleInputChange} onAddInputField={handleAddInputField} showAddNumberField={false} color={'lightblue'} longer={false}  />
       <SoftMax data={data} />
       <BarGraph data={softmaxArray}  onInputChange={handleInputChange} onAddInputField={handleAddInputField} showAddNumberField={false} color={'lightgreen'} longer={true} />
