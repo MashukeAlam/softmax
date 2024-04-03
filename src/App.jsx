@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import BarGraph from './BarGraph';
 import SoftMax from './SoftMax';
+import './App.css';
 
 function App() {
   const [data, setData] = useState([5]); // Initial data array
@@ -26,10 +27,11 @@ function App() {
   }
 
   return (
-    <div >
-      <BarGraph data={data}  onInputChange={handleInputChange} onAddInputField={handleAddInputField} showAddNumberField={true} color={'lightblue'}  />
+    <div style={{display: 'flex', flexDirection: 'column', width: '100%', alignItems: 'center'}}>
+      <button onClick={handleAddInputField}>+ Add</button>
+      <BarGraph data={data}  onInputChange={handleInputChange} onAddInputField={handleAddInputField} showAddNumberField={false} color={'lightblue'} longer={false}  />
       <SoftMax data={data} />
-      <BarGraph data={softmaxArray}  onInputChange={handleInputChange} onAddInputField={handleAddInputField} showAddNumberField={false} color={'lightgreen'} />
+      <BarGraph data={softmaxArray}  onInputChange={handleInputChange} onAddInputField={handleAddInputField} showAddNumberField={false} color={'lightgreen'} longer={true} />
     </div>
   );
 }
